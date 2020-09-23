@@ -14,23 +14,27 @@ const setupInput = function(conn) {
   connection = conn;
   return stdin;
   
-}
+};
 
-const handleUserInput = function(data){
+const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
-  } else if (data === 'w'){
-   connection.write('Move: up');
-  } else if (data === 'a'){
-   connection.write('Move: left');
-  } else if (data === 's'){
-   connection.write('Move: down');
-  } else if (data === 'd'){
-   connection.write('Move: right');
+  } else if (data === 'w') {
+    connection.write('Move: up');
+  } else if (data === 'a') {
+    connection.write('Move: left');
+  } else if (data === 's') {
+    connection.write('Move: down');
+  } else if (data === 'd') {
+    connection.write('Move: right');
+  } else if (data === 'g') {
+    connection.write('Say: gg');
+  } else if (data === 'f') {
+    connection.write('Say: nice!');
   }
-}
+};
 
 module.exports = {
   setupInput,
   handleUserInput
-}
+};
