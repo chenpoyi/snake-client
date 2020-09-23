@@ -10,9 +10,12 @@ const connect = function() {
   conn.on('connect', (data) => {
     console.log('You have connected to the server.');
     conn.write('Name: PC');
+    
+    
   })
   conn.on('data', (data) => {
     console.log(`Incoming: ${data}`);
+    
   })
 
   return conn;
